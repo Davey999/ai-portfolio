@@ -39,3 +39,14 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local dev/QA artifacts
+.claude/
+.clone/
+.screenshots/
+HANDOVER.md
+qa-dark.png
+qa-light.png
+qa-gemini.mjs
+review-util.js
+screenshot-util.js

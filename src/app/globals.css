@@ -1,26 +1,97 @@
 @import "tailwindcss";
 
+/* ============================================
+   DESIGN SYSTEM — AI Finance Portfolio
+   Based on: kentokawazoe.com layout
+   Colour: Slate-blue (dark bg / light text)
+   ============================================ */
+
+/* --- Dark mode (default) --- */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg-primary: #1a2332;
+  --bg-surface: #212d3f;
+  --bg-elevated: #283548;
+  --text-primary: #E0E0E0;
+  --text-secondary: rgba(255, 255, 255, 0.62);
+  --text-accent: rgba(255, 255, 255, 0.8);
+  --border-color: rgba(136, 136, 136, 0.67);
+  --accent: #78a9b8;
+  --accent-hover: #91bfcc;
+  --toggle-bg: transparent;
+  --toggle-dot: rgba(255, 255, 255, 0.8);
+  color-scheme: dark;
+}
+
+/* --- Light mode --- */
+[data-theme="light"] {
+  --bg-primary: #ede9e3;
+  --bg-surface: #f5f1ec;
+  --bg-elevated: #e5e1db;
+  --text-primary: #1a2332;
+  --text-secondary: rgba(26, 35, 50, 0.7);
+  --text-accent: #1a2332;
+  --border-color: rgba(26, 35, 50, 0.15);
+  --accent: #3d7a8a;
+  --accent-hover: #2d6a7a;
+  --toggle-bg: transparent;
+  --toggle-dot: #1a2332;
+  color-scheme: light;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-surface: var(--bg-surface);
+  --color-bg-elevated: var(--bg-elevated);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-accent: var(--text-accent);
+  --color-border: var(--border-color);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --font-heading: "Syne", sans-serif;
+  --font-body: "Syne", sans-serif;
+  --font-display: "Syne", sans-serif;
+  --font-hero: "Montserrat", sans-serif;
+  --font-prose: "Inter", sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* --- Base styles --- */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+}
+
+/* --- Prose: Inter for body paragraphs --- */
+p, li, blockquote {
+  font-family: var(--font-prose);
+  line-height: 1.6;
+}
+
+/* --- Dark mode: headings at full white for hierarchy --- */
+:root h1, :root h2, :root h3 {
+  color: rgba(255, 255, 255, 1.0);
+}
+[data-theme="light"] h1,
+[data-theme="light"] h2,
+[data-theme="light"] h3 {
+  color: var(--text-primary);
+}
+
+/* --- Scrollbar styling --- */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 2px;
+}
+
+/* --- Selection colour --- */
+::selection {
+  background: var(--accent);
+  color: #ffffff;
 }
