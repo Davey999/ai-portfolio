@@ -121,10 +121,9 @@ export default function Home() {
             <h2>ABOUT ME</h2>
           </div>
           <div className="w-[80vw] lg:w-[35vw] h-[1px] bg-border" />
-          <div className="w-[80vw] lg:w-[35vw] flex flex-col pt-[5vh] lg:pt-[clamp(1rem,7.5vh,3rem)] text-[clamp(0.7rem,1vw,1.2rem)] tracking-[0.1rem] font-light gap-1 leading-[clamp(1.1rem,3vh,1.4rem)] text-text-primary">
-            <p>I&apos;m a finance professional who got curious about AI. Not the hype — the practical side. What actually works when you sit down with real data, real deadlines, and a team that needs results.</p>
-            <p>Most of what&apos;s out there about AI and finance is either too theoretical or too technical. I focus on the middle ground — showing finance teams how to use these tools on the work they&apos;re already doing.</p>
-            <p>I write about what I&apos;ve tested, what worked, and what didn&apos;t. No moonshots. Just practical workflows that save time and make better use of the judgment calls finance people are already good at.</p>
+          <div className="w-[80vw] lg:w-[35vw] flex flex-col pt-[5vh] lg:pt-[clamp(1rem,7.5vh,3rem)] text-[clamp(0.7rem,1vw,1.2rem)] tracking-[0.1rem] font-light gap-4 leading-[clamp(1.1rem,3vh,1.4rem)] text-text-primary">
+            <p>I&apos;m a Director of Finance, and sit at the intersection of accounting, data and AI. More and more, I spend my time exploring what AI tools can actually do for Finance teams.</p>
+            <p>I also use AI for personal projects - I&apos;ve built YouTube analytics tools, content creation workflows, and even this website. Because the best way to understand agents, APIs, and AI tooling is to actually build something with them.</p>
           </div>
         </div>
       </section>
@@ -133,13 +132,12 @@ export default function Home() {
       <FadeSection className="relative w-screen pt-[5vh] pl-[10vw] lg:pt-[clamp(5rem,15vh,10rem)] lg:pl-[15vw] flex flex-col lg:flex-row lg:items-center lg:gap-[10vw]">
         <div className="lg:h-[clamp(20rem,60vh,40rem)] flex flex-col items-start justify-start">
           <div className="h-[15vh] flex items-end text-[clamp(1rem,1.5vw,2rem)] font-light mb-1 tracking-[0.1em]">
-            <h2>WHAT I DO</h2>
+            <h2>WHAT&apos;S HERE</h2>
           </div>
           <div className="w-[80vw] lg:w-[35vw] h-[1px] bg-border" />
-          <div className="w-[80vw] lg:w-[35vw] flex flex-col pt-[5vh] lg:pt-[clamp(1rem,7.5vh,3rem)] text-[clamp(0.7rem,1vw,1.2rem)] tracking-[0.1rem] font-light gap-1 leading-[clamp(1.1rem,3vh,1.4rem)] text-text-primary">
-            <p>Finance teams keep hearing they need to use AI. But most of the advice comes from people who&apos;ve never closed a month-end or reconciled a ledger.</p>
-            <p>I bridge that gap. I take AI tools — Claude, Perplexity, Gemini — and test them against real finance work. Reconciliations, data extraction, SQL queries, financial statement analysis. Then I share what actually delivers.</p>
-            <p>The goal isn&apos;t to replace the work. It&apos;s to remove the friction so finance teams can spend more time on the judgment calls that matter.</p>
+          <div className="w-[80vw] lg:w-[35vw] flex flex-col pt-[5vh] lg:pt-[clamp(1rem,7.5vh,3rem)] text-[clamp(0.7rem,1vw,1.2rem)] tracking-[0.1rem] font-light gap-4 leading-[clamp(1.1rem,3vh,1.4rem)] text-text-primary">
+            <p>This site is a collection of what I&apos;ve built, what I&apos;ve learnt and where I think AI is heading - in finance and beyond. You&apos;ll find project case studies, writing on AI, and links to useful AI resources.</p>
+            <p>If you&apos;re in finance (or any field) and curious about getting started with AI, hopefully there&apos;s something in here that helps you on your journey.</p>
           </div>
         </div>
         <div className="mt-[5vh] w-[80vw] aspect-[8/5] lg:w-[35vw] lg:aspect-[8/5] flex items-center justify-center overflow-hidden rounded-sm bg-bg-surface border border-border">
