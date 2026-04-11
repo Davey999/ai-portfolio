@@ -83,7 +83,7 @@ export default function Home() {
       {/* Hero Section */}
       <section
         ref={heroRef}
-        className="relative w-screen pt-[17.5vh] pl-[10vw] flex flex-col lg:pt-[15vh] lg:pl-[15vw] lg:flex-row lg:items-center lg:gap-[10vw]"
+        className="relative w-screen pt-[17.5vh] pl-[10vw] flex flex-col lg:pt-[15vh] lg:pl-[15vw]"
         style={{
           opacity: 0,
           filter: "blur(1px)",
@@ -92,142 +92,71 @@ export default function Home() {
         }}
       >
         {/* Left column — Name */}
-        <div className="w-[80vw] lg:w-[35vw] lg:h-[clamp(20rem,60vh,40rem)] flex flex-col items-start justify-between font-light leading-none">
-          <div>
-            <div className="text-[clamp(3rem,6.5vw,7rem)] md:text-[clamp(4rem,7vw,8rem)] font-light md:font-thin tracking-[-0.03em] font-[family-name:var(--font-hero)]">
-              <h1>DAVID</h1>
-              <h1>MERRY</h1>
-            </div>
-            <div className="text-[clamp(0.8rem,1.2vw,1.5rem)] pl-1 lg:pl-2 text-text-secondary mt-2 tracking-wide">
-              Practical AI for Finance
-            </div>
+        <div className="w-[80vw] lg:w-[35vw] flex flex-col items-start justify-start font-light leading-none">
+          <div className="text-[clamp(3rem,6.5vw,7rem)] md:text-[clamp(4rem,7vw,8rem)] font-light md:font-thin tracking-[-0.03em] font-[family-name:var(--font-hero)]">
+            <h1>DAVID</h1>
+            <h1>MERRY</h1>
           </div>
-
-          <div className="pl-1 mt-[10vh] lg:pl-2 flex flex-col items-start justify-start text-[clamp(0.8rem,1.2vw,1.5rem)] leading-tight text-text-secondary">
-            <p>For business inquiries, email me at</p>
-            <a
-              href="mailto:davegmerry@gmail.com"
-              className="text-text-primary hover:text-accent transition-colors duration-300"
-              style={{ fontFamily: "var(--font-prose)", lineHeight: 1.5 }}
-            >
-              davegmerry@gmail.com
-            </a>
-          </div>
-        </div>
-
-        {/* Right column — About Me */}
-        <div className="lg:h-[clamp(20rem,60vh,40rem)] flex flex-col items-start justify-end mt-[10vh] lg:mt-0">
-          <div className="h-[10vh] lg:h-[15vh] flex items-end text-[clamp(1rem,1.5vw,2rem)] font-light mb-1 tracking-[0.1em]">
-            <h2>ABOUT ME</h2>
-          </div>
-          <div className="w-[80vw] lg:w-[35vw] h-[1px] bg-border" />
-          <div className="w-[80vw] lg:w-[35vw] flex flex-col pt-[5vh] lg:pt-[clamp(1rem,7.5vh,3rem)] text-[clamp(0.7rem,1vw,1.2rem)] tracking-[0.1rem] font-light gap-4 leading-[clamp(1.1rem,3vh,1.4rem)] text-text-primary">
-            <p>I&apos;m a Director of Finance, and sit at the intersection of accounting, data and AI. More and more, I spend my time exploring what AI tools can actually do for Finance teams.</p>
-            <p>I also use AI for personal projects - I&apos;ve built YouTube analytics tools, content creation workflows, and even this website. Because the best way to understand agents, APIs, and AI tooling is to actually build something with them.</p>
+          <div className="text-[clamp(0.8rem,1.2vw,1.5rem)] pl-1 lg:pl-2 text-text-secondary mt-2 tracking-wide">
+            Practical AI for Finance
           </div>
         </div>
       </section>
 
-      {/* Motivation Section */}
-      <FadeSection className="relative w-screen pt-[5vh] pl-[10vw] lg:pt-[clamp(5rem,15vh,10rem)] lg:pl-[15vw] flex flex-col lg:flex-row lg:items-center lg:gap-[10vw]">
+      {/* About Me Section */}
+      <FadeSection className="relative w-screen pt-[5vh] pl-[10vw] lg:pt-[clamp(5rem,15vh,10rem)] lg:pl-[15vw] flex flex-col lg:flex-row lg:items-start lg:gap-[10vw]">
         <div className="lg:h-[clamp(20rem,60vh,40rem)] flex flex-col items-start justify-start">
+          <div className="h-[15vh] flex items-end text-[clamp(1rem,1.5vw,2rem)] font-light mb-1 tracking-[0.1em]">
+            <h2>ABOUT ME</h2>
+          </div>
+          <div className="w-[80vw] lg:w-[35vw] h-[1px] bg-border" />
+          <div className="w-[80vw] lg:w-[35vw] flex flex-col pt-[5vh] lg:pt-[clamp(1rem,7.5vh,3rem)] text-[clamp(0.7rem,1vw,1.2rem)] tracking-[0.1rem] font-light gap-4 leading-[clamp(1.1rem,3vh,1.4rem)] text-text-primary">
+            <p>I am a Director of Finance and Chartered Accountant with over 20 years of experience. I work at the intersection of accounting, data, and AI, focusing on how AI tools can be used by finance teams in the real world.</p>
+            <p>My approach is simple: no hype, just practical stuff that works and saves teams time.</p>
+          </div>
+        </div>
+        <div className="mt-[5vh] w-[35vw] aspect-[3/4] lg:mt-[12vh] lg:w-[14vw] lg:aspect-[3/4] overflow-hidden rounded-sm">
+          <img src="/photo.jpg" alt="David Merry" className="w-full h-full object-cover object-center" />
+        </div>
+      </FadeSection>
+
+      {/* Motivation Section */}
+      <FadeSection className="relative w-screen pt-[5vh] pl-[10vw] lg:pt-[clamp(5rem,15vh,10rem)] lg:pl-[15vw] flex flex-col lg:flex-row lg:items-start lg:gap-[10vw]">
+        {/* Image — left on desktop, below text on mobile */}
+        <div className="order-2 lg:order-1 mt-[5vh] w-[80vw] aspect-[8/5] lg:mt-[15vh] lg:w-[28vw] lg:aspect-[8/5] overflow-hidden rounded-sm">
+          <img src="/youtube-analyser.png" alt="YouTube channel analysis" className="w-full h-full object-cover object-top" />
+        </div>
+        {/* Text — first on mobile, right on desktop */}
+        <div className="order-1 lg:order-2 lg:h-[clamp(20rem,60vh,40rem)] flex flex-col items-start justify-start">
           <div className="h-[15vh] flex items-end text-[clamp(1rem,1.5vw,2rem)] font-light mb-1 tracking-[0.1em]">
             <h2>WHAT&apos;S HERE</h2>
           </div>
           <div className="w-[80vw] lg:w-[35vw] h-[1px] bg-border" />
           <div className="w-[80vw] lg:w-[35vw] flex flex-col pt-[5vh] lg:pt-[clamp(1rem,7.5vh,3rem)] text-[clamp(0.7rem,1vw,1.2rem)] tracking-[0.1rem] font-light gap-4 leading-[clamp(1.1rem,3vh,1.4rem)] text-text-primary">
-            <p>This site is a collection of what I&apos;ve built, what I&apos;ve learnt and where I think AI is heading - in finance and beyond. You&apos;ll find project case studies, writing on AI, and links to useful AI resources.</p>
-            <p>If you&apos;re in finance (or any field) and curious about getting started with AI, hopefully there&apos;s something in here that helps you on your journey.</p>
+            <p>This site is a record of my AI journey. It&apos;s where I document the workflows I&apos;m building, the lessons I&apos;m learning, and my perspective on where AI is heading in Finance (and beyond).</p>
+            <p>While much of this site is finance-focused, you will also find details of my projects in other fields.</p>
+            <p>If you&apos;re also exploring how to use AI in your work or personal projects, I&apos;d love to hear from you!</p>
           </div>
-        </div>
-        <div className="mt-[5vh] w-[80vw] aspect-[8/5] lg:w-[35vw] lg:aspect-[8/5] flex items-center justify-center overflow-hidden rounded-sm bg-bg-surface border border-border">
-          <div className="text-text-secondary text-sm font-light">[IMAGE_PLACEHOLDER]</div>
         </div>
       </FadeSection>
 
-      {/* Skills / Expertise Section */}
-      <FadeSection className="relative w-screen pt-[5vh] pl-[10vw] lg:pt-[clamp(2rem,5vh,5rem)] lg:pl-[15vw] flex flex-col">
-        <div className="w-[80vw] lg:w-[75vw] flex flex-col items-start justify-start">
-          <div className="h-[15vh] flex items-end text-[clamp(1rem,1.5vw,2rem)] font-light mb-1 tracking-[0.1em]">
-            <h2>EXPERTISE</h2>
-          </div>
-          <div className="w-[80vw] lg:w-[75vw] h-[1px] bg-border" />
-          <div className="mt-[5vh] w-[80vw] lg:w-[75vw] flex flex-col items-start justify-start gap-10 lg:flex-row lg:items-start lg:justify-between">
-            {/* Column 1 */}
-            <div className="flex flex-col w-[80vw] lg:w-[25vw] gap-3 font-light">
-              <div className="text-[clamp(1rem,1.5vw,2rem)] tracking-[0.1em] min-h-[3em] flex items-start">
-                <h3>AI FOR FINANCE</h3>
-              </div>
-              <div className="w-full text-[clamp(0.8rem,1.2vw,1rem)] flex flex-wrap gap-2">
-                {["Claude", "Perplexity", "Gemini", "Prompt Engineering"].map(
-                  (skill) => (
-                    <span
-                      key={skill}
-                      className="w-fit h-fit p-1 px-5 m-1 border border-border rounded-full bg-bg-elevated transition-colors duration-500 hover:bg-text-primary hover:text-bg-primary cursor-default"
-                    >
-                      {skill}
-                    </span>
-                  )
-                )}
-              </div>
-            </div>
-
-            {/* Column 2 */}
-            <div className="flex flex-col w-[80vw] lg:w-[20vw] gap-3 font-light">
-              <div className="text-[clamp(1rem,1.5vw,2rem)] tracking-[0.1em] min-h-[3em] flex items-start">
-                <h3>FINANCE & ACCOUNTING</h3>
-              </div>
-              <div className="w-full text-[clamp(0.8rem,1.2vw,1rem)] flex flex-wrap gap-2">
-                {["Financial Analysis", "Month-End Close", "Reconciliations", "SQL & Data"].map(
-                  (skill) => (
-                    <span
-                      key={skill}
-                      className="w-fit h-fit p-1 px-5 m-1 border border-border rounded-full bg-bg-elevated transition-colors duration-500 hover:bg-text-primary hover:text-bg-primary cursor-default"
-                    >
-                      {skill}
-                    </span>
-                  )
-                )}
-              </div>
-            </div>
-
-            {/* Column 3 */}
-            <div className="flex flex-col w-[80vw] lg:w-[20vw] gap-3 font-light">
-              <div className="text-[clamp(1rem,1.5vw,2rem)] tracking-[0.1em] min-h-[3em] flex items-start">
-                <h3>CONTENT & COMMUNICATION</h3>
-              </div>
-              <div className="w-full text-[clamp(0.8rem,1.2vw,1rem)] flex flex-wrap gap-2">
-                {["Technical Writing", "LinkedIn", "Case Studies", "Workflow Documentation"].map(
-                  (skill) => (
-                    <span
-                      key={skill}
-                      className="w-fit h-fit p-1 px-5 m-1 border border-border rounded-full bg-bg-elevated transition-colors duration-500 hover:bg-text-primary hover:text-bg-primary cursor-default"
-                    >
-                      {skill}
-                    </span>
-                  )
-                )}
-              </div>
-            </div>
-          </div>
-
-          {/* Bottom links */}
-          <div className="ml-auto flex flex-col items-end justify-center gap-4 mt-[15vh]">
-            <Link
-              href="/projects"
-              className="flex flex-row items-center justify-center gap-2 text-[clamp(1rem,1.5vw,2rem)] font-light hover:text-accent transition-colors duration-300"
-            >
-              <span>PROJECTS</span>
-              <ArrowIcon />
-            </Link>
-            <Link
-              href="/writing"
-              className="flex flex-row items-center justify-center gap-2 text-[clamp(1rem,1.5vw,2rem)] font-light hover:text-accent transition-colors duration-300"
-            >
-              <span>WRITING</span>
-              <ArrowIcon />
-            </Link>
-          </div>
+      {/* Bottom links */}
+      <FadeSection className="relative w-screen pt-[clamp(5rem,15vh,10rem)] pl-[10vw] lg:pl-[15vw] pb-[clamp(3rem,8vh,6rem)]">
+        <div className="ml-auto pr-[10vw] flex flex-col items-end justify-center gap-4">
+          <Link
+            href="/projects"
+            className="flex flex-row items-center justify-center gap-2 text-[clamp(1rem,1.5vw,2rem)] font-light hover:text-accent transition-colors duration-300"
+          >
+            <span>PROJECTS</span>
+            <ArrowIcon />
+          </Link>
+          <Link
+            href="/writing"
+            className="flex flex-row items-center justify-center gap-2 text-[clamp(1rem,1.5vw,2rem)] font-light hover:text-accent transition-colors duration-300"
+          >
+            <span>WRITING</span>
+            <ArrowIcon />
+          </Link>
         </div>
       </FadeSection>
     </div>
