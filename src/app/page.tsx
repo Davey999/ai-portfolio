@@ -83,7 +83,7 @@ export default function Home() {
       {/* Hero Section */}
       <section
         ref={heroRef}
-        className="relative w-screen pt-[17.5vh] pl-[10vw] flex flex-col lg:pt-[15vh] lg:pl-[15vw]"
+        className="relative w-screen pt-[17.5vh] pl-[10vw] flex flex-col lg:flex-row lg:items-start lg:pt-[15vh] lg:pl-[15vw]"
         style={{
           opacity: 0,
           filter: "blur(1px)",
@@ -93,13 +93,17 @@ export default function Home() {
       >
         {/* Left column — Name */}
         <div className="w-[80vw] lg:w-[35vw] flex flex-col items-start justify-start font-light leading-none">
-          <div className="text-[clamp(3rem,6.5vw,7rem)] md:text-[clamp(4rem,7vw,8rem)] font-light md:font-thin tracking-[-0.03em] font-[family-name:var(--font-hero)]">
+          <div className="text-[clamp(2.5rem,5vw,6rem)] md:text-[clamp(3rem,5.5vw,6.5rem)] font-light md:font-thin tracking-[-0.03em] font-[family-name:var(--font-hero)]">
             <h1>DAVID</h1>
             <h1>MERRY</h1>
           </div>
           <div className="text-[clamp(0.8rem,1.2vw,1.5rem)] pl-1 lg:pl-2 text-text-secondary mt-2 tracking-wide">
             Practical AI for Finance
           </div>
+        </div>
+        {/* Photo */}
+        <div className="mt-[5vh] w-[35vw] aspect-[3/4] lg:mt-0 lg:ml-[15vw] lg:w-[14vw] lg:aspect-[3/4] overflow-hidden rounded-sm">
+          <img src="/photo.jpg" alt="David Merry" className="w-full h-full object-cover object-center" />
         </div>
       </section>
 
@@ -111,23 +115,17 @@ export default function Home() {
           </div>
           <div className="w-[80vw] lg:w-[35vw] h-[1px] bg-border" />
           <div className="w-[80vw] lg:w-[35vw] flex flex-col pt-[5vh] lg:pt-[clamp(1rem,7.5vh,3rem)] text-[clamp(0.7rem,1vw,1.2rem)] tracking-[0.1rem] font-light gap-4 leading-[clamp(1.1rem,3vh,1.4rem)] text-text-primary">
-            <p>I am a Director of Finance and Chartered Accountant with over 20 years of experience. I work at the intersection of accounting, data, and AI, focusing on how AI tools can be used by finance teams in the real world.</p>
+            <p>I am a Director of Finance and Chartered Accountant with over 20 years of experience.</p>
+            <p>I work at the intersection of accounting, data, and AI, focusing on how AI tools can be used by finance teams in the real world.</p>
             <p>My approach is simple: no hype, just practical stuff that works and saves teams time.</p>
           </div>
-        </div>
-        <div className="mt-[5vh] w-[35vw] aspect-[3/4] lg:mt-[12vh] lg:w-[14vw] lg:aspect-[3/4] overflow-hidden rounded-sm">
-          <img src="/photo.jpg" alt="David Merry" className="w-full h-full object-cover object-center" />
         </div>
       </FadeSection>
 
       {/* Motivation Section */}
-      <FadeSection className="relative w-screen pt-[5vh] pl-[10vw] lg:pt-[clamp(5rem,15vh,10rem)] lg:pl-[15vw] flex flex-col lg:flex-row lg:items-start lg:gap-[10vw]">
-        {/* Image — left on desktop, below text on mobile */}
-        <div className="order-2 lg:order-1 mt-[5vh] w-[80vw] aspect-[8/5] lg:mt-[15vh] lg:w-[28vw] lg:aspect-[8/5] overflow-hidden rounded-sm">
-          <img src="/youtube-analyser.png" alt="YouTube channel analysis" className="w-full h-full object-cover object-top" />
-        </div>
-        {/* Text — first on mobile, right on desktop */}
-        <div className="order-1 lg:order-2 lg:h-[clamp(20rem,60vh,40rem)] flex flex-col items-start justify-start">
+      <FadeSection className="relative w-screen pt-[5vh] pr-[10vw] lg:pt-[clamp(5rem,15vh,10rem)] lg:pr-[15vw] flex flex-col items-end lg:flex-row lg:justify-end lg:items-start">
+        {/* Text */}
+        <div className="lg:h-[clamp(20rem,60vh,40rem)] flex flex-col items-start justify-start">
           <div className="h-[15vh] flex items-end text-[clamp(1rem,1.5vw,2rem)] font-light mb-1 tracking-[0.1em]">
             <h2>WHAT&apos;S HERE</h2>
           </div>
