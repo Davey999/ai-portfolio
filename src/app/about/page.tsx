@@ -2,8 +2,6 @@
 
 import { useRef, useEffect } from "react";
 
-const experience: { role: string; company: string; period: string }[] = [];
-
 export default function AboutPage() {
   const headerRef = useRef<HTMLDivElement>(null);
 
@@ -32,9 +30,9 @@ export default function AboutPage() {
         </h1>
       </div>
 
-      {/* Two-column layout like hero */}
+      {/* Two-column layout */}
       <div className="flex flex-col lg:flex-row lg:gap-[10vw]">
-        {/* Left — Bio */}
+        {/* Left — Photo + Bio */}
         <div
           className="lg:w-[35vw]"
           style={{
@@ -59,19 +57,18 @@ export default function AboutPage() {
             }
           }}
         >
-          {/* Photo placeholder */}
-          <div className="w-full aspect-[4/5] bg-bg-surface border border-border rounded-sm flex items-center justify-center overflow-hidden mb-[5vh]">
-            <div className="text-text-secondary text-sm font-light">[PHOTO]</div>
+          <div className="w-full aspect-[4/5] overflow-hidden rounded-sm mb-[5vh]">
+            <img src="/photo.jpg" alt="David Merry" className="w-full h-full object-cover object-center" />
           </div>
 
           <div className="flex flex-col gap-4 text-[clamp(0.7rem,1vw,1.2rem)] tracking-[0.1rem] font-light leading-[clamp(1.1rem,3vh,1.4rem)] text-text-primary">
-            <p>I&apos;ve spent my career in finance — month-end closes, reconciliations, financial analysis, the works. The kind of work where accuracy matters and deadlines don&apos;t move.</p>
-            <p>A couple of years ago I started experimenting with AI tools to see if they could actually help with the day-to-day. Not the flashy demos — the real stuff. Turns out, they can. But only if you know how to use them properly.</p>
-            <p>Now I spend my time testing AI tools against real finance work, documenting what delivers, and sharing it so other finance teams don&apos;t have to figure it out from scratch.</p>
+            <p>I am a Director of Finance and Chartered Accountant with over 20 years of experience across corporate finance, financial reporting, and data analysis. The kind of work where accuracy matters, deadlines don&apos;t move, and the spreadsheets have consequences.</p>
+            <p>A few years ago I started testing AI tools against real finance work - not demos, not hypotheticals, but the actual day-to-day. Month-end closes, reconciliations, data extraction, report writing. Turns out AI can handle a lot of it. But it takes the right tools, the right approach, and a lot of reps to find out what actually works.</p>
+            <p>Now I build workflows, document what delivers, and share it so other finance teams don&apos;t have to figure it out from scratch.</p>
           </div>
         </div>
 
-        {/* Right — Experience */}
+        {/* Right — Philosophy */}
         <div
           className="lg:w-[35vw] mt-[10vh] lg:mt-0"
           style={{
@@ -96,15 +93,14 @@ export default function AboutPage() {
             }
           }}
         >
-          {/* Values / Philosophy */}
           <div>
             <div className="text-[clamp(1rem,1.5vw,2rem)] font-light mb-1 tracking-wide">
               <h2>PHILOSOPHY</h2>
             </div>
             <div className="w-full h-[1px] bg-border mb-[3vh]" />
             <div className="flex flex-col gap-4 text-[clamp(0.7rem,1vw,1.2rem)] tracking-[0.1rem] font-light leading-[clamp(1.1rem,3vh,1.4rem)] text-text-primary">
-              <p>AI is only useful if it works on the stuff you actually do. I don&apos;t chase the latest model announcement or build things that look impressive in a demo but fall apart in practice. If it doesn&apos;t save time or improve the output, it&apos;s not worth writing about.</p>
-              <p>Start with the basics. Learn what works. Then try harder things. That&apos;s the approach I take, and it&apos;s what I recommend to every finance team I talk to.</p>
+              <p>Most finance professionals who give up on AI are using the wrong tool, or giving it the wrong instructions. The technology is not the problem - the approach is. Getting good at AI in finance is a skill, and like most skills, it compounds with practice.</p>
+              <p>I don&apos;t write about what AI could theoretically do for finance teams. I write about what it actually does, tested against real work. If it doesn&apos;t save time or improve the output, it&apos;s not worth your attention.</p>
             </div>
           </div>
         </div>

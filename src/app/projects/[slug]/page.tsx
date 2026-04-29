@@ -31,14 +31,6 @@ export default async function CaseStudyPage({
   return (
     <div className="relative w-screen pt-[17.5vh] pb-[15vh] pl-[10vw] pr-[10vw] lg:pt-[12vh] lg:pl-[15vw] lg:pr-[15vw]">
 
-      {/* Back link */}
-      <Link
-        href="/projects"
-        className="inline-flex items-center gap-2 text-text-secondary text-sm font-light hover:text-accent transition-colors duration-300 mb-[6vh]"
-      >
-        ← All projects
-      </Link>
-
       {/* Header */}
       <div className="mb-[6vh]">
         <p className="text-text-secondary text-[clamp(0.7rem,0.9vw,1rem)] font-light mb-3">
@@ -152,15 +144,8 @@ export default async function CaseStudyPage({
 
       </div>
 
-      {/* Footer nav */}
       <div className="mt-[10vh]">
         <Divider />
-        <Link
-          href="/projects"
-          className="inline-flex items-center gap-2 text-text-secondary text-sm font-light hover:text-accent transition-colors duration-300"
-        >
-          ← Back to all projects
-        </Link>
       </div>
 
     </div>

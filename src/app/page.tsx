@@ -107,56 +107,76 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About Me Section */}
-      <FadeSection className="relative w-screen pt-[5vh] pl-[10vw] lg:pt-[clamp(5rem,15vh,10rem)] lg:pl-[15vw] flex flex-col lg:flex-row lg:items-start lg:gap-[10vw]">
-        <div className="lg:h-[clamp(20rem,60vh,40rem)] flex flex-col items-start justify-start">
-          <div className="h-[15vh] flex items-end text-[clamp(1rem,1.5vw,2rem)] font-light mb-1 tracking-[0.1em]">
+      {/* About Me + What's Here — two-column */}
+      <FadeSection className="relative w-screen pt-[clamp(5rem,15vh,10rem)] px-[10vw] lg:px-[15vw] flex flex-col lg:flex-row lg:items-start lg:gap-[10vw]">
+        <div className="flex flex-col items-start justify-start flex-1">
+          <div className="h-[8vh] flex items-end text-[clamp(1rem,1.5vw,2rem)] font-light mb-1 tracking-[0.1em]">
             <h2>ABOUT ME</h2>
           </div>
-          <div className="w-[80vw] lg:w-[35vw] h-[1px] bg-border" />
-          <div className="w-[80vw] lg:w-[35vw] flex flex-col pt-[5vh] lg:pt-[clamp(1rem,7.5vh,3rem)] text-[clamp(0.7rem,1vw,1.2rem)] tracking-[0.1rem] font-light gap-4 leading-[clamp(1.1rem,3vh,1.4rem)] text-text-primary">
+          <div className="w-full h-[1px] bg-border" />
+          <div className="w-full flex flex-col pt-[clamp(1rem,5vh,2.5rem)] text-[clamp(0.7rem,1vw,1.2rem)] tracking-[0.1rem] font-light gap-4 leading-[clamp(1.1rem,3vh,1.4rem)] text-text-primary">
             <p>I am a Director of Finance and Chartered Accountant with over 20 years of experience.</p>
-            <p>I work at the intersection of accounting, data, and AI, focusing on how AI tools can be used by finance teams in the real world.</p>
-            <p>My approach is simple: no hype, just practical stuff that works and saves teams time.</p>
+            <p>I use Claude, Alteryx, and Glean AI in my day-to-day finance work.</p>
+            <p>Outside of that, I build with Claude Code and write about what I&apos;m learning.</p>
           </div>
         </div>
-      </FadeSection>
-
-      {/* Motivation Section */}
-      <FadeSection className="relative w-screen pt-[5vh] pr-[10vw] lg:pt-[clamp(5rem,15vh,10rem)] lg:pr-[15vw] flex flex-col items-end lg:flex-row lg:justify-end lg:items-start">
-        {/* Text */}
-        <div className="lg:h-[clamp(20rem,60vh,40rem)] flex flex-col items-start justify-start">
-          <div className="h-[15vh] flex items-end text-[clamp(1rem,1.5vw,2rem)] font-light mb-1 tracking-[0.1em]">
+        <div className="flex flex-col items-start justify-start flex-1 mt-[8vh] lg:mt-0">
+          <div className="h-[8vh] flex items-end text-[clamp(1rem,1.5vw,2rem)] font-light mb-1 tracking-[0.1em]">
             <h2>WHAT&apos;S HERE</h2>
           </div>
-          <div className="w-[80vw] lg:w-[35vw] h-[1px] bg-border" />
-          <div className="w-[80vw] lg:w-[35vw] flex flex-col pt-[5vh] lg:pt-[clamp(1rem,7.5vh,3rem)] text-[clamp(0.7rem,1vw,1.2rem)] tracking-[0.1rem] font-light gap-4 leading-[clamp(1.1rem,3vh,1.4rem)] text-text-primary">
+          <div className="w-full h-[1px] bg-border" />
+          <div className="w-full flex flex-col pt-[clamp(1rem,5vh,2.5rem)] text-[clamp(0.7rem,1vw,1.2rem)] tracking-[0.1rem] font-light gap-4 leading-[clamp(1.1rem,3vh,1.4rem)] text-text-primary">
             <p>This site is a record of my AI journey. It&apos;s where I document the workflows I&apos;m building, the lessons I&apos;m learning, and my perspective on where AI is heading in Finance (and beyond).</p>
             <p>While much of this site is finance-focused, you will also find details of my projects in other fields.</p>
-            <p>If you&apos;re also exploring how to use AI in your work or personal projects, I&apos;d love to hear from you!</p>
+            <p>If what you find here resonates with you, or you just want to talk AI in finance, connect with me on LinkedIn.</p>
           </div>
         </div>
       </FadeSection>
 
-      {/* Bottom links */}
-      <FadeSection className="relative w-screen pt-[clamp(5rem,15vh,10rem)] pl-[10vw] lg:pl-[15vw] pb-[clamp(3rem,8vh,6rem)]">
-        <div className="ml-auto pr-[10vw] flex flex-col items-end justify-center gap-4">
-          <Link
-            href="/projects"
-            className="flex flex-row items-center justify-center gap-2 text-[clamp(1rem,1.5vw,2rem)] font-light hover:text-accent transition-colors duration-300"
-          >
-            <span>PROJECTS</span>
-            <ArrowIcon />
+      {/* Featured Projects */}
+      <FadeSection className="relative w-screen pt-[clamp(6rem,18vh,10rem)] px-[10vw] lg:px-[15vw]">
+        <div className="flex items-end h-[8vh] text-[clamp(1rem,1.5vw,2rem)] font-light mb-1 tracking-[0.1em]">
+          <h2>PROJECTS</h2>
+        </div>
+        <div className="w-full h-[1px] bg-border mb-[clamp(1.5rem,5vh,3rem)]" />
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <Link href="/projects/football-finance" className="group border border-white/10 rounded-sm p-6 flex flex-col gap-4 hover:border-white/20 hover:brightness-110 transition-colors duration-300" style={{ background: '#1e2535' }}>
+            <div className="text-[clamp(0.6rem,0.8vw,0.9rem)] tracking-[0.12em] text-[#7a8a9a] font-light">AI WORKFLOW · FINANCE</div>
+            <div className="text-[clamp(0.9rem,1.2vw,1.4rem)] font-light tracking-wide text-white/90">Football Finance</div>
+            <p className="text-[clamp(0.7rem,1vw,1.1rem)] font-light text-[#9aabb8] leading-relaxed">
+              Automated pipeline turning Companies House filings into structured financial reports across multiple UK football clubs.
+            </p>
+            <div className="flex flex-wrap gap-2 mt-auto">
+              {["Claude Code", "Companies House API", "Excel"].map(tag => (
+                <span key={tag} className="text-[clamp(0.6rem,0.7vw,0.8rem)] tracking-[0.08em] text-[#7a8a9a] border border-white/10 px-2 py-1 rounded-sm">{tag}</span>
+              ))}
+            </div>
+            <div className="text-[clamp(0.7rem,0.9vw,1rem)] tracking-[0.1em] text-[#7a8a9a] group-hover:text-white transition-colors duration-300 text-right">VIEW PROJECT →</div>
           </Link>
-          <Link
-            href="/writing"
-            className="flex flex-row items-center justify-center gap-2 text-[clamp(1rem,1.5vw,2rem)] font-light hover:text-accent transition-colors duration-300"
-          >
-            <span>WRITING</span>
-            <ArrowIcon />
+          <Link href="/projects/youtube-analytics" className="group border border-white/10 rounded-sm p-6 flex flex-col gap-4 hover:border-white/20 hover:brightness-110 transition-colors duration-300" style={{ background: '#1e2535' }}>
+            <div className="text-[clamp(0.6rem,0.8vw,0.9rem)] tracking-[0.12em] text-[#7a8a9a] font-light">AI TOOL · DATA ANALYSIS</div>
+            <div className="text-[clamp(0.9rem,1.2vw,1.4rem)] font-light tracking-wide text-white/90">YouTube Analytics</div>
+            <div className="flex gap-6">
+              <div>
+                <div className="text-[clamp(1rem,1.5vw,1.8rem)] font-light text-white/90">+549%</div>
+                <div className="text-[clamp(0.6rem,0.7vw,0.8rem)] tracking-[0.08em] text-[#7a8a9a]">VIEWS PER VIDEO</div>
+              </div>
+              <div>
+                <div className="text-[clamp(1rem,1.5vw,1.8rem)] font-light text-white/90">+535%</div>
+                <div className="text-[clamp(0.6rem,0.7vw,0.8rem)] tracking-[0.08em] text-[#7a8a9a]">WATCH TIME</div>
+              </div>
+            </div>
+            <div className="flex flex-wrap gap-2 mt-auto">
+              {["Python", "Claude API", "YouTube API"].map(tag => (
+                <span key={tag} className="text-[clamp(0.6rem,0.7vw,0.8rem)] tracking-[0.08em] text-[#7a8a9a] border border-white/10 px-2 py-1 rounded-sm">{tag}</span>
+              ))}
+            </div>
+            <div className="text-[clamp(0.7rem,0.9vw,1rem)] tracking-[0.1em] text-[#7a8a9a] group-hover:text-white transition-colors duration-300 text-right">VIEW PROJECT →</div>
           </Link>
         </div>
       </FadeSection>
+
+      <div className="pb-[clamp(3rem,8vh,6rem)]" />
     </div>
   );
 }
