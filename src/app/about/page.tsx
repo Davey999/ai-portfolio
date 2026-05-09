@@ -95,7 +95,7 @@ export default function AboutPage() {
         >
           <div>
             <div className="text-[clamp(1rem,1.5vw,2rem)] font-light mb-1 tracking-wide">
-              <h2>PHILOSOPHY</h2>
+              <h2>APPROACH</h2>
             </div>
             <div className="w-full h-[1px] bg-border mb-[3vh]" />
             <div className="flex flex-col gap-4 text-[clamp(0.7rem,1vw,1.2rem)] tracking-[0.1rem] font-light leading-[clamp(1.1rem,3vh,1.4rem)] text-text-primary">
