@@ -140,7 +140,7 @@ export default function Home() {
         </div>
         <div className="w-full h-[1px] bg-border mb-[clamp(1.5rem,5vh,3rem)]" />
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <Link href="/projects/football-finance" className="group border border-white/10 rounded-sm p-6 flex flex-col gap-4 hover:border-white/20 hover:brightness-110 transition-colors duration-300" style={{ background: '#1e2535' }}>
+          <Link href="/projects/football-finance" className="group border border-white/25 rounded-sm p-6 flex flex-col gap-4 hover:border-white/50 hover:brightness-110 transition-colors duration-300" style={{ background: '#1e2535' }}>
             <div className="text-[clamp(0.6rem,0.8vw,0.9rem)] tracking-[0.12em] text-[#7a8a9a] font-light">AI WORKFLOW · FINANCE</div>
             <div className="text-[clamp(0.9rem,1.2vw,1.4rem)] font-light tracking-wide text-white/90">Football Finance</div>
             <p className="text-[clamp(0.7rem,1vw,1.1rem)] font-light text-[#9aabb8] leading-relaxed">
@@ -153,7 +153,7 @@ export default function Home() {
             </div>
             <div className="text-[clamp(0.7rem,0.9vw,1rem)] tracking-[0.1em] text-[#7a8a9a] group-hover:text-white transition-colors duration-300 text-right">VIEW PROJECT →</div>
           </Link>
-          <Link href="/projects/youtube-analytics" className="group border border-white/10 rounded-sm p-6 flex flex-col gap-4 hover:border-white/20 hover:brightness-110 transition-colors duration-300" style={{ background: '#1e2535' }}>
+          <Link href="/projects/youtube-analytics" className="group border border-white/25 rounded-sm p-6 flex flex-col gap-4 hover:border-white/50 hover:brightness-110 transition-colors duration-300" style={{ background: '#1e2535' }}>
             <div className="text-[clamp(0.6rem,0.8vw,0.9rem)] tracking-[0.12em] text-[#7a8a9a] font-light">AI TOOL · DATA ANALYSIS</div>
             <div className="text-[clamp(0.9rem,1.2vw,1.4rem)] font-light tracking-wide text-white/90">YouTube Analytics</div>
             <div className="flex gap-6">
