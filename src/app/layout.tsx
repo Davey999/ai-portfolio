@@ -24,7 +24,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Strike the Balance | Practical AI for Finance",
+  title: "David Merry | Practical AI for Finance",
   description: "Getting Finance teams started with AI",
 };
 
