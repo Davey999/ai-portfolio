@@ -3,3 +3,46 @@
 
 This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
 <!-- END:nextjs-agent-rules -->
+
+---
+
+## Codex entry point
+
+Read these first, every session:
+
+1. **CLAUDE.md** — project rules and the multi-agent handoff protocol.
+2. **HANDOVER.md** — where the last session left off. Note: this file is gitignored
+   and lives on local disk only. It will not be present in a remote/cloud context.
+
+## Your role here
+
+Your default role is **reviewer / gap analyst**: review Claude Code's output,
+find gaps, pressure-test decisions, flag drift. Do not rewrite files wholesale
+unless explicitly asked.
+
+When explicitly asked to build or draft something, do so. Build tasks follow
+the same handoff rules as reviews — commit the output and write a build summary.
+
+## The handoff loop (non-negotiable)
+
+The git repo is the shared brain. Chat history is not shared between agents,
+so anything that must survive must be a committed file.
+
+1. You only ever start from a **clean working tree**. If it is dirty, stop and
+   say so rather than working on half-finished state.
+2. After any work (review or build), write a summary file to `reviews/`:
+   - Review: `reviews/codex-review-YYYY-MM-DD.md`
+   - Build: `reviews/codex-build-YYYY-MM-DD.md`
+   Use the template in `reviews/README.md`. This file is how Claude Code learns
+   what you did.
+3. For build tasks: commit both the built files AND the summary file together.
+4. **Commit before the agent switches.** Use the attribution convention below.
+
+**Note on HANDOVER.md:** Do not update HANDOVER.md directly. That is Claude
+Code's job. Your `reviews/` summary gives Claude Code everything it needs to
+write the diary entry when David next runs `/handover`.
+
+## Commit attribution
+
+Prefix every commit subject with the agent that made it:
+`[codex] ...`, `[claude] ...`, or `[david] ...`.
