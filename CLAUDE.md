@@ -50,3 +50,10 @@ Project data (the case studies on `/projects` and the home page cards) is **NOT*
 - `src/app/projects/_components/ProjectCard.tsx` — list page card component
 
 **Featured projects on home page**: controlled by `featured: true` frontmatter flag plus `order` (ascending). Currently: Football Finance (order 10), YouTube Analytics (order 20). Set any other case study to `featured: true` and it will appear automatically.
+
+## Cross-Project Links
+
+This project is one of four in David's career system. The dashboard lives at `C:\Users\61422\LocalOnly\Projects\career-hub.md` — read it at session start for cross-project state.
+
+- **Consumes from `content-creation`**: case studies via the markdown sync above. Never edit `content/projects/*.md` directly — they are overwritten on next sync. Source of truth = `content-creation/1 - Projects/b - Project Summaries/`.
+- **Feeds `job-search`**: davemerry.com is the proof link for CV, LinkedIn, recruiter conversations, and cold outreach.
