@@ -1,96 +1,15 @@
-"use client";
-
-import Link from "next/link";
-import { useEffect, useRef } from "react";
-
-function ArrowIcon() {
-  return (
-    <svg
-      width="clamp(1rem,1.5vw,2rem)"
-      height="clamp(1rem,1.5vw,2rem)"
-      viewBox="0 0 102 102"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <line x1="0.2" y1="50.2" x2="100.2" y2="50.2" stroke="currentColor" strokeWidth="4" />
-      <line x1="65.4" y1="15.2" x2="100.8" y2="50.6" stroke="currentColor" strokeWidth="4" />
-      <line x1="65.4" y1="85.2" x2="100.8" y2="49.9" stroke="currentColor" strokeWidth="4" />
-    </svg>
-  );
-}
-
-function useScrollFade(ref: React.RefObject<HTMLElement | null>) {
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          el.style.opacity = "1";
-          el.style.filter = "blur(0px)";
-          el.style.transform = "translateY(0)";
-        }
-      },
-      { threshold: 0.15 }
-    );
-
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, [ref]);
-}
-
-function FadeSection({
-  children,
-  className = "",
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) {
-  const ref = useRef<HTMLElement>(null);
-  useScrollFade(ref);
-
-  return (
-    <section
-      ref={ref}
-      className={className}
-      style={{
-        opacity: 0,
-        filter: "blur(1px)",
-        transform: "translateY(20px)",
-        transition: "opacity 0.8s ease-out, filter 0.8s ease-out, transform 0.8s ease-out",
-      }}
-    >
-      {children}
-    </section>
-  );
-}
+import { getFeaturedProjects } from "@/data/projects.server";
+import { FadeSection } from "./_components/FadeSection";
+import { HeroSection } from "./_components/HeroSection";
+import { FeaturedCard } from "./_components/FeaturedCard";
 
 export default function Home() {
-  const heroRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const el = heroRef.current;
-    if (el) {
-      el.style.opacity = "1";
-      el.style.filter = "blur(0px)";
-      el.style.transform = "translateY(0)";
-    }
-  }, []);
+  const featured = getFeaturedProjects();
 
   return (
     <div className="relative">
       {/* Hero Section */}
-      <section
-        ref={heroRef}
-        className="relative w-screen pt-[17.5vh] pl-[10vw] flex flex-col lg:flex-row lg:items-start lg:pt-[15vh] lg:pl-[15vw]"
-        style={{
-          opacity: 0,
-          filter: "blur(1px)",
-          transform: "translateY(20px)",
-          transition: "opacity 0.8s ease-out, filter 0.8s ease-out, transform 0.8s ease-out",
-        }}
-      >
+      <HeroSection>
         {/* Left column — Name */}
         <div className="w-[80vw] lg:w-[35vw] flex flex-col items-start justify-start font-light leading-none">
           <div className="text-[clamp(2.5rem,5vw,6rem)] md:text-[clamp(3rem,5.5vw,6.5rem)] font-light md:font-thin tracking-[-0.03em] font-[family-name:var(--font-hero)]">
@@ -103,9 +22,10 @@ export default function Home() {
         </div>
         {/* Photo */}
         <div className="mt-[5vh] w-[35vw] aspect-[3/4] lg:mt-0 lg:ml-[15vw] lg:w-[14vw] lg:aspect-[3/4] overflow-hidden rounded-sm">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/photo.jpg" alt="David Merry" className="w-full h-full object-cover object-center" />
         </div>
-      </section>
+      </HeroSection>
 
       {/* About Me + What's Here — two-column */}
       <FadeSection className="relative w-screen pt-[clamp(5rem,15vh,10rem)] px-[10vw] lg:px-[15vw] flex flex-col lg:flex-row lg:items-start lg:gap-[10vw]">
@@ -140,39 +60,9 @@ export default function Home() {
         </div>
         <div className="w-full h-[1px] bg-border mb-[clamp(1.5rem,5vh,3rem)]" />
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <Link href="/projects/football-finance" className="group border border-white/25 rounded-sm p-6 flex flex-col gap-4 hover:border-white/50 hover:brightness-110 transition-colors duration-300" style={{ background: '#1e2535' }}>
-            <div className="text-[clamp(0.6rem,0.8vw,0.9rem)] tracking-[0.12em] text-[#7a8a9a] font-light">AI WORKFLOW · FINANCE</div>
-            <div className="text-[clamp(0.9rem,1.2vw,1.4rem)] font-light tracking-wide text-white/90">Football Finance</div>
-            <p className="text-[clamp(0.7rem,1vw,1.1rem)] font-light text-[#9aabb8] leading-relaxed">
-              Automated pipeline turning Companies House filings into structured financial reports across multiple UK football clubs.
-            </p>
-            <div className="flex flex-wrap gap-2 mt-auto">
-              {["Claude Code", "Companies House API", "Excel"].map(tag => (
-                <span key={tag} className="text-[clamp(0.6rem,0.7vw,0.8rem)] tracking-[0.08em] text-[#7a8a9a] border border-white/10 px-2 py-1 rounded-sm">{tag}</span>
-              ))}
-            </div>
-            <div className="text-[clamp(0.7rem,0.9vw,1rem)] tracking-[0.1em] text-[#7a8a9a] group-hover:text-white transition-colors duration-300 text-right">VIEW PROJECT →</div>
-          </Link>
-          <Link href="/projects/youtube-analytics" className="group border border-white/25 rounded-sm p-6 flex flex-col gap-4 hover:border-white/50 hover:brightness-110 transition-colors duration-300" style={{ background: '#1e2535' }}>
-            <div className="text-[clamp(0.6rem,0.8vw,0.9rem)] tracking-[0.12em] text-[#7a8a9a] font-light">AI TOOL · DATA ANALYSIS</div>
-            <div className="text-[clamp(0.9rem,1.2vw,1.4rem)] font-light tracking-wide text-white/90">YouTube Analytics</div>
-            <div className="flex gap-6">
-              <div>
-                <div className="text-[clamp(1rem,1.5vw,1.8rem)] font-light text-white/90">+549%</div>
-                <div className="text-[clamp(0.6rem,0.7vw,0.8rem)] tracking-[0.08em] text-[#7a8a9a]">VIEWS PER VIDEO</div>
-              </div>
-              <div>
-                <div className="text-[clamp(1rem,1.5vw,1.8rem)] font-light text-white/90">+535%</div>
-                <div className="text-[clamp(0.6rem,0.7vw,0.8rem)] tracking-[0.08em] text-[#7a8a9a]">WATCH TIME</div>
-              </div>
-            </div>
-            <div className="flex flex-wrap gap-2 mt-auto">
-              {["Python", "Claude API", "YouTube API"].map(tag => (
-                <span key={tag} className="text-[clamp(0.6rem,0.7vw,0.8rem)] tracking-[0.08em] text-[#7a8a9a] border border-white/10 px-2 py-1 rounded-sm">{tag}</span>
-              ))}
-            </div>
-            <div className="text-[clamp(0.7rem,0.9vw,1rem)] tracking-[0.1em] text-[#7a8a9a] group-hover:text-white transition-colors duration-300 text-right">VIEW PROJECT →</div>
-          </Link>
+          {featured.map((project) => (
+            <FeaturedCard key={project.slug} project={project} />
+          ))}
         </div>
       </FadeSection>
 

@@ -1,9 +1,8 @@
 import { notFound } from "next/navigation";
-import Link from "next/link";
-import { projects, getProjectBySlug } from "@/data/projects";
+import { getAllProjects, getProjectBySlug } from "@/data/projects.server";
 
 export function generateStaticParams() {
-  return projects.map((p) => ({ slug: p.slug }));
+  return getAllProjects().map((p) => ({ slug: p.slug }));
 }
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
@@ -16,6 +15,27 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 
 function Divider() {
   return <div className="h-[1px] w-full bg-border my-[5vh]" />;
+}
+
+function Paragraphs({ text }: { text: string }) {
+  const parts = text
+    .split(/\n\s*\n/)
+    .map((p) => p.trim())
+    .filter((p) => p.length > 0);
+  return (
+    <>
+      {parts.map((part, i) => (
+        <p
+          key={i}
+          className={`text-[clamp(0.85rem,1.1vw,1.1rem)] text-text-primary font-light leading-relaxed${
+            i > 0 ? " mt-4" : ""
+          }`}
+        >
+          {part}
+        </p>
+      ))}
+    </>
+  );
 }
 
 export default async function CaseStudyPage({
@@ -64,9 +84,7 @@ export default async function CaseStudyPage({
         {/* The Situation */}
         <div>
           <SectionLabel>The Situation</SectionLabel>
-          <p className="text-[clamp(0.85rem,1.1vw,1.1rem)] text-text-primary font-light leading-relaxed">
-            {project.situation}
-          </p>
+          <Paragraphs text={project.situation} />
         </div>
 
         <Divider />
@@ -74,9 +92,7 @@ export default async function CaseStudyPage({
         {/* The Problem */}
         <div>
           <SectionLabel>The Problem</SectionLabel>
-          <p className="text-[clamp(0.85rem,1.1vw,1.1rem)] text-text-primary font-light leading-relaxed">
-            {project.problem}
-          </p>
+          <Paragraphs text={project.problem} />
         </div>
 
         <Divider />
@@ -84,9 +100,7 @@ export default async function CaseStudyPage({
         {/* The Approach */}
         <div>
           <SectionLabel>The Approach</SectionLabel>
-          <p className="text-[clamp(0.85rem,1.1vw,1.1rem)] text-text-primary font-light leading-relaxed">
-            {project.approach}
-          </p>
+          <Paragraphs text={project.approach} />
         </div>
 
         <Divider />
@@ -94,9 +108,7 @@ export default async function CaseStudyPage({
         {/* What I Built */}
         <div>
           <SectionLabel>What I Built</SectionLabel>
-          <p className="text-[clamp(0.85rem,1.1vw,1.1rem)] text-text-primary font-light leading-relaxed">
-            {project.whatIBuilt}
-          </p>
+          <Paragraphs text={project.whatIBuilt} />
         </div>
 
         <Divider />
@@ -122,9 +134,7 @@ export default async function CaseStudyPage({
             <Divider />
             <div>
               <SectionLabel>The Result</SectionLabel>
-              <p className="text-[clamp(0.85rem,1.1vw,1.1rem)] text-text-primary font-light leading-relaxed">
-                {project.result}
-              </p>
+              <Paragraphs text={project.result} />
             </div>
           </>
         )}
@@ -135,9 +145,7 @@ export default async function CaseStudyPage({
             <Divider />
             <div>
               <SectionLabel>What I Learned</SectionLabel>
-              <p className="text-[clamp(0.85rem,1.1vw,1.1rem)] text-text-primary font-light leading-relaxed">
-                {project.whatILearned}
-              </p>
+              <Paragraphs text={project.whatILearned} />
             </div>
           </>
         )}
