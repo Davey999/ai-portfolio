@@ -26,3 +26,27 @@ recently.
 
 **Commit attribution:** prefix every commit subject with `[claude]`, `[codex]`,
 or `[david]` so `git log` stays a clear record of who did what.
+
+## Content Pipeline (added May 23, 2026)
+
+Project data (the case studies on `/projects` and the home page cards) is **NOT** hand-coded TypeScript. It is read at build time from markdown files in `content/projects/`, which are synced from the canonical source: `c:\Users\61422\LocalOnly\Projects\content-creation\1 - Projects\b - Project Summaries\`.
+
+**To add or update a case study on davemerry.com:**
+
+1. Edit/create the markdown file in `content-creation/1 - Projects/b - Project Summaries/`. Frontmatter must be on line 1 (no comments above it). Required fields: `slug, title, type, description, situation, problem, approach, whatIBuilt, stack`. Set `showOnSite: true` to publish.
+2. From this repo: `npm run sync-content`
+3. `npm run dev`, visually verify at `http://localhost:3000`
+4. `git add content/projects && git commit && git push` — Hostinger auto-deploys
+5. Also commit + push the source change in `content-creation/`
+
+**Body of markdown files is NEVER rendered.** Only the YAML frontmatter fields. Safe to keep anonymisation notes / publishing considerations in the body.
+
+**Key files:**
+- `scripts/sync-projects.mjs` — the sync script (filters `showOnSite: true`, validates required fields, errors on duplicate slugs, removes stale files)
+- `src/data/types.ts` — `Project` interface (all available frontmatter fields)
+- `src/data/projects.server.ts` — server-only data loader (uses `gray-matter`)
+- `content/projects/*.md` — synced files, committed to this repo (do NOT edit directly; they are overwritten on next sync)
+- `src/app/_components/` — shared client components (FadeSection, MountFade, HeroSection, FeaturedCard)
+- `src/app/projects/_components/ProjectCard.tsx` — list page card component
+
+**Featured projects on home page**: controlled by `featured: true` frontmatter flag plus `order` (ascending). Currently: Football Finance (order 10), YouTube Analytics (order 20). Set any other case study to `featured: true` and it will appear automatically.
