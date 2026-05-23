@@ -35,9 +35,7 @@ export default function Home() {
           </div>
           <div className="w-full h-[1px] bg-border" />
           <div className="w-full flex flex-col pt-[clamp(1rem,5vh,2.5rem)] text-[clamp(0.7rem,1vw,1.2rem)] tracking-[0.1rem] font-light gap-4 leading-[clamp(1.1rem,3vh,1.4rem)] text-text-primary">
-            <p>I am a Director of Finance and Chartered Accountant with over 20 years of experience.</p>
-            <p>I use Claude, Alteryx, and Glean AI in my day-to-day finance work.</p>
-            <p>Outside of that, I build with Claude Code and write about what I&apos;m learning.</p>
+            <p>Director of Finance and Chartered Accountant. I use AI every day - to do finance work better, and to build the tools that make that possible.</p>
           </div>
         </div>
         <div className="flex flex-col items-start justify-start flex-1 mt-[8vh] lg:mt-0">
@@ -46,9 +44,9 @@ export default function Home() {
           </div>
           <div className="w-full h-[1px] bg-border" />
           <div className="w-full flex flex-col pt-[clamp(1rem,5vh,2.5rem)] text-[clamp(0.7rem,1vw,1.2rem)] tracking-[0.1rem] font-light gap-4 leading-[clamp(1.1rem,3vh,1.4rem)] text-text-primary">
-            <p>This site is a record of my AI journey. It&apos;s where I document the workflows I&apos;m building, the lessons I&apos;m learning, and my perspective on where AI is heading in Finance (and beyond).</p>
-            <p>While much of this site is finance-focused, you will also find details of my projects in other fields.</p>
-            <p>If what you find here resonates with you, or you just want to talk AI in finance, connect with me on LinkedIn.</p>
+            <p>This site documents what I am learning about AI in finance - practical techniques, real workflows, and things I have built to solve actual problems.</p>
+            <p>You will also find projects I have built using Claude Code. I think that is where finance work is heading: AI integrated into your workflow, not just a chat window you copy and paste into.</p>
+            <p>If any of it is useful, or you just want to compare notes, find me on LinkedIn.</p>
           </div>
         </div>
       </FadeSection>

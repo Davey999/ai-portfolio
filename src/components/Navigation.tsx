@@ -9,7 +9,6 @@ const navLinks = [
   { href: "/", label: "HOME" },
   { href: "/writing", label: "WRITING" },
   { href: "/about", label: "ABOUT" },
-  { href: "/contact", label: "CONTACT" },
 ];
 
 const socialLinks = [

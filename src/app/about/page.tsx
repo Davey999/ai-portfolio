@@ -99,8 +99,28 @@ export default function AboutPage() {
             </div>
             <div className="w-full h-[1px] bg-border mb-[3vh]" />
             <div className="flex flex-col gap-4 text-[clamp(0.7rem,1vw,1.2rem)] tracking-[0.1rem] font-light leading-[clamp(1.1rem,3vh,1.4rem)] text-text-primary">
-              <p>Most finance professionals who give up on AI are using the wrong tool, or giving it the wrong instructions. The technology is not the problem - the approach is. Getting good at AI in finance is a skill, and like most skills, it compounds with practice.</p>
+              <p>When AI doesn&apos;t deliver, the technology is rarely the problem. It&apos;s usually the tool, the setup, or the instructions. Getting good at it is a skill - and like most skills, it compounds with practice.</p>
               <p>I don&apos;t write about what AI could theoretically do for finance teams. I write about what it actually does, tested against real work. If it doesn&apos;t save time or improve the output, it&apos;s not worth your attention.</p>
+              <p>A lot of what circulates online about AI in finance is templates - comment a word and someone sends you a prompt. Templates are a useful starting point. But results depend on context. You get good at AI by using AI, and there is no shortcut to that.</p>
+              <p>The way finance work gets done is changing. I write about what that looks like from the inside.</p>
+            </div>
+
+            <div className="mt-[5vh]">
+              <div className="text-[clamp(1rem,1.5vw,2rem)] font-light mb-1 tracking-wide">
+                <h2>CONNECT</h2>
+              </div>
+              <div className="w-full h-[1px] bg-border mb-[3vh]" />
+              <div className="flex flex-col gap-4 text-[clamp(0.7rem,1vw,1.2rem)] tracking-[0.1rem] font-light leading-[clamp(1.1rem,3vh,1.4rem)] text-text-primary">
+                <p>If you want to compare notes or just talk AI in finance, find me on LinkedIn.</p>
+                <a
+                  href="https://www.linkedin.com/in/david-merry/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-text-primary hover:text-accent transition-colors duration-300"
+                >
+                  LinkedIn
+                </a>
+              </div>
             </div>
           </div>
         </div>
