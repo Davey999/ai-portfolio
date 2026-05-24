@@ -53,7 +53,7 @@ Project data (the case studies on `/projects` and the home page cards) is **NOT*
 
 ## Cross-Project Links
 
-This project is one of four in David's career system. The dashboard lives at `C:\Users\61422\LocalOnly\Projects\career-hub.md` — read it at session start for cross-project state.
+This project is one of four in David's career system. The command center lives at `C:\Users\61422\LocalOnly\Projects\career-hub\` — open that repo first and read its `ops.md` and `priorities.md` for cross-project state.
 
 - **Consumes from `content-creation`**: case studies via the markdown sync above. Never edit `content/projects/*.md` directly — they are overwritten on next sync. Source of truth = `content-creation/1 - Projects/b - Project Summaries/`.
 - **Feeds `job-search`**: davemerry.com is the proof link for CV, LinkedIn, recruiter conversations, and cold outreach.
