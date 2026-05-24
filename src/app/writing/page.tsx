@@ -4,6 +4,13 @@ import { useRef, useEffect } from "react";
 
 const posts = [
   {
+    title: "Reconciliation Part 3: Making AI Instructions Permanent",
+    date: "May 2026",
+    description: "Same prompt, different result. Why AI output varies even when your input doesn't - and how making your instructions permanent narrows the gap. Personal Preferences vs Claude Projects: what each does and which to use.",
+    tag: "Tutorial",
+    href: "https://www.linkedin.com/feed/update/urn:li:share:7459581263931269120",
+  },
+  {
     title: "Reconciliation Part 2: Giving AI the Right Guardrails",
     date: "Apr 2026",
     description: "The exact instruction blocks that tell Claude how to prepare a reconciliation -and why the gap between AI output and review-ready output is a prompt design problem.",
