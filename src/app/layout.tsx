@@ -25,7 +25,21 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "David Merry | Practical AI for Finance",
-  description: "Getting Finance teams started with AI",
+  description:
+    "Practical AI techniques and tools for finance professionals. Workflows, case studies, and articles from a Director of Finance and Chartered Accountant.",
+  openGraph: {
+    title: "David Merry | Practical AI for Finance",
+    description:
+      "Practical AI techniques and tools for finance professionals.",
+    type: "website",
+    url: "https://lightsteelblue-ant-761299.hostingersite.com",
+  },
+  twitter: {
+    card: "summary",
+    title: "David Merry | Practical AI for Finance",
+    description:
+      "Practical AI techniques and tools for finance professionals.",
+  },
 };
 
 export default function RootLayout({

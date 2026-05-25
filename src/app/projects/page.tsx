@@ -1,5 +1,17 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { getAllProjects } from "@/data/projects.server";
+
+export const metadata: Metadata = {
+  title: "Projects | David Merry",
+  description:
+    "Case studies of AI tools and workflows built for real finance problems.",
+  openGraph: {
+    title: "Projects | David Merry",
+    description: "Case studies of AI tools built for real finance problems.",
+    type: "website",
+  },
+};
 import { FadeSection } from "../_components/FadeSection";
 import { MountFade } from "../_components/MountFade";
 import { ProjectCard } from "./_components/ProjectCard";

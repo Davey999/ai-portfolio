@@ -1,6 +1,18 @@
-"use client";
+import type { Metadata } from "next";
+import { MountFade } from "../_components/MountFade";
+import { FadeItem } from "../_components/FadeItem";
 
-import { useRef, useEffect } from "react";
+export const metadata: Metadata = {
+  title: "AI Glossary for Finance | David Merry",
+  description:
+    "Plain-English definitions of AI terms for finance professionals. Context window, hallucination, prompt engineering, and more.",
+  openGraph: {
+    title: "AI Glossary for Finance | David Merry",
+    description:
+      "Plain-English definitions of AI terms for finance professionals.",
+    type: "website",
+  },
+};
 
 const terms = [
   {
@@ -94,66 +106,22 @@ const terms = [
 ];
 
 export default function GlossaryPage() {
-  const headerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const el = headerRef.current;
-    if (el) {
-      el.style.opacity = "1";
-      el.style.filter = "blur(0px)";
-    }
-  }, []);
-
   return (
     <div className="relative w-screen pt-[17.5vh] pl-[10vw] pr-[10vw] lg:pt-[12vh] lg:pl-[15vw] lg:pr-[15vw]">
       {/* Header */}
-      <div
-        ref={headerRef}
-        className="flex flex-col mb-[5vh]"
-        style={{
-          opacity: 0,
-          filter: "blur(1px)",
-          transition: "opacity 0.8s ease-out, filter 0.8s ease-out",
-        }}
-      >
+      <MountFade className="flex flex-col mb-[5vh]">
         <h1 className="text-[clamp(1.5rem,3vw,3rem)] font-light tracking-wide">
           GLOSSARY
         </h1>
         <p className="text-text-secondary text-[clamp(0.7rem,0.9vw,1rem)] font-light mt-2">
           Plain-English definitions of AI terms for finance professionals.
         </p>
-      </div>
+      </MountFade>
 
       {/* Terms */}
       <div className="flex flex-col">
         {terms.map((item, i) => (
-          <div
-            key={i}
-            className="py-[clamp(1.5rem,4vh,3rem)] border-b border-border"
-            style={{
-              opacity: 0,
-              filter: "blur(1px)",
-              transform: "translateY(10px)",
-              transition: "opacity 0.6s ease-out, filter 0.6s ease-out, transform 0.6s ease-out",
-            }}
-            ref={(el) => {
-              if (el) {
-                const observer = new IntersectionObserver(
-                  ([entry]) => {
-                    if (entry.isIntersecting) {
-                      setTimeout(() => {
-                        el.style.opacity = "1";
-                        el.style.filter = "blur(0px)";
-                        el.style.transform = "translateY(0)";
-                      }, i * 60);
-                    }
-                  },
-                  { threshold: 0.1 }
-                );
-                observer.observe(el);
-              }
-            }}
-          >
+          <FadeItem key={i} delay={i * 60} className="py-[clamp(1.5rem,4vh,3rem)] border-b border-border">
             <h2 className="text-[clamp(0.9rem,1.3vw,1.4rem)] font-light tracking-wide mb-[1.5vh]">
               {item.term}
             </h2>
@@ -165,7 +133,7 @@ export default function GlossaryPage() {
                 Finance example: {item.example}
               </p>
             </div>
-          </div>
+          </FadeItem>
         ))}
       </div>
 

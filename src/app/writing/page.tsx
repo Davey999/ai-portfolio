@@ -1,6 +1,18 @@
-"use client";
+import type { Metadata } from "next";
+import { MountFade } from "../_components/MountFade";
+import { FadeItem } from "../_components/FadeItem";
 
-import { useRef, useEffect } from "react";
+export const metadata: Metadata = {
+  title: "Writing | David Merry",
+  description:
+    "Articles on AI in finance - practical techniques, real workflows, and what actually works for finance teams.",
+  openGraph: {
+    title: "Writing | David Merry",
+    description:
+      "Practical AI techniques and real workflows for finance professionals.",
+    type: "website",
+  },
+};
 
 const posts = [
   {
@@ -76,80 +88,40 @@ const posts = [
 ];
 
 export default function WritingPage() {
-  const headerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const el = headerRef.current;
-    if (el) {
-      el.style.opacity = "1";
-      el.style.filter = "blur(0px)";
-    }
-  }, []);
-
   return (
     <div className="relative w-screen pt-[17.5vh] pl-[10vw] pr-[10vw] lg:pt-[12vh] lg:pl-[15vw] lg:pr-[15vw]">
       {/* Header */}
-      <div
-        ref={headerRef}
-        className="flex flex-col mb-[5vh]"
-        style={{
-          opacity: 0,
-          filter: "blur(1px)",
-          transition: "opacity 0.8s ease-out, filter 0.8s ease-out",
-        }}
-      >
+      <MountFade className="flex flex-col mb-[5vh]">
         <h1 className="text-[clamp(1.5rem,3vw,3rem)] font-light tracking-wide">
           WRITING
         </h1>
-      </div>
+      </MountFade>
 
       {/* Posts list */}
       <div className="flex flex-col">
         {posts.map((post, i) => (
-          <a
-            key={i}
-            href={post.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group py-[clamp(1.5rem,3vh,2.5rem)] border-b border-border"
-            style={{
-              opacity: 0,
-              filter: "blur(1px)",
-              transform: "translateY(10px)",
-              transition: "opacity 0.6s ease-out, filter 0.6s ease-out, transform 0.6s ease-out",
-            }}
-            ref={(el) => {
-              if (el) {
-                const observer = new IntersectionObserver(
-                  ([entry]) => {
-                    if (entry.isIntersecting) {
-                      setTimeout(() => {
-                        el.style.opacity = "1";
-                        el.style.filter = "blur(0px)";
-                        el.style.transform = "translateY(0)";
-                      }, i * 100);
-                    }
-                  },
-                  { threshold: 0.1 }
-                );
-                observer.observe(el);
-              }
-            }}
-          >
-            <div className="flex flex-col lg:flex-row lg:items-baseline lg:justify-between gap-2">
-              <div className="flex-1">
-                <h2 className="text-[clamp(0.9rem,1.3vw,1.4rem)] font-light tracking-wide group-hover:text-accent transition-colors duration-300">
-                  {post.title}
-                </h2>
-                <p className="text-[clamp(0.7rem,0.9vw,1rem)] text-text-primary font-light mt-2 leading-relaxed max-w-[60ch]">
-                  {post.description}
-                </p>
+          <FadeItem key={i} delay={i * 100}>
+            <a
+              href={post.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block py-[clamp(1.5rem,3vh,2.5rem)] border-b border-border"
+            >
+              <div className="flex flex-col lg:flex-row lg:items-baseline lg:justify-between gap-2">
+                <div className="flex-1">
+                  <h2 className="text-[clamp(0.9rem,1.3vw,1.4rem)] font-light tracking-wide group-hover:text-accent transition-colors duration-300">
+                    {post.title}
+                  </h2>
+                  <p className="text-[clamp(0.7rem,0.9vw,1rem)] text-text-primary font-light mt-2 leading-relaxed max-w-[60ch]">
+                    {post.description}
+                  </p>
+                </div>
+                <div className="flex items-center gap-4 text-[clamp(0.65rem,0.8vw,0.9rem)] text-text-secondary font-light shrink-0">
+                  <span>{post.date}</span>
+                </div>
               </div>
-              <div className="flex items-center gap-4 text-[clamp(0.65rem,0.8vw,0.9rem)] text-text-secondary font-light shrink-0">
-                <span>{post.date}</span>
-              </div>
-            </div>
-          </a>
+            </a>
+          </FadeItem>
         ))}
       </div>
     </div>

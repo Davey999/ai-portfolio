@@ -1,8 +1,28 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getAllProjects, getProjectBySlug } from "@/data/projects.server";
 
 export function generateStaticParams() {
   return getAllProjects().map((p) => ({ slug: p.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const project = getProjectBySlug(slug);
+  if (!project) return {};
+  return {
+    title: `${project.title} | David Merry`,
+    description: project.description,
+    openGraph: {
+      title: project.title,
+      description: project.description,
+      type: "article",
+    },
+  };
 }
 
 function SectionLabel({ children }: { children: React.ReactNode }) {

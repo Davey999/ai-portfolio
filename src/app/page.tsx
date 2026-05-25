@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { getFeaturedProjects } from "@/data/projects.server";
 import { FadeSection } from "./_components/FadeSection";
 import { HeroSection } from "./_components/HeroSection";
@@ -21,9 +22,8 @@ export default function Home() {
           </div>
         </div>
         {/* Photo */}
-        <div className="mt-[5vh] w-[35vw] aspect-[3/4] lg:mt-0 lg:ml-[15vw] lg:w-[14vw] lg:aspect-[3/4] overflow-hidden rounded-sm">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/photo.jpg" alt="David Merry" className="w-full h-full object-cover object-center" />
+        <div className="mt-[5vh] w-[35vw] aspect-[3/4] lg:mt-0 lg:ml-[15vw] lg:w-[14vw] lg:aspect-[3/4] overflow-hidden rounded-sm relative">
+          <Image src="/photo.jpg" alt="David Merry" fill className="object-cover object-center" />
         </div>
       </HeroSection>
 
