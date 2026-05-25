@@ -46,7 +46,7 @@ Project data (the case studies on `/projects` and the home page cards) is **NOT*
 - `src/data/types.ts` — `Project` interface (all available frontmatter fields)
 - `src/data/projects.server.ts` — server-only data loader (uses `gray-matter`)
 - `content/projects/*.md` — synced files, committed to this repo (do NOT edit directly; they are overwritten on next sync)
-- `src/app/_components/` — shared client components (FadeSection, MountFade, HeroSection, FeaturedCard)
+- `src/app/_components/` — shared client components (FadeSection, MountFade, HeroSection, FeaturedCard, FadeItem)
 - `src/app/projects/_components/ProjectCard.tsx` — list page card component
 
 **Featured projects on home page**: controlled by `featured: true` frontmatter flag plus `order` (ascending). Currently: Football Finance (order 10), YouTube Analytics (order 20). Set any other case study to `featured: true` and it will appear automatically.
