@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getAllProjects } from "@/data/projects.server";
 
-const BASE_URL = "https://lightsteelblue-ant-761299.hostingersite.com";
+const BASE_URL = "https://davidmerry.me";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const projects = getAllProjects();

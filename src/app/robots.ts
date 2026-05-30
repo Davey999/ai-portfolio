@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: "/links",
     },
-    sitemap: "https://lightsteelblue-ant-761299.hostingersite.com/sitemap.xml",
+    sitemap: "https://davidmerry.me/sitemap.xml",
   };
 }

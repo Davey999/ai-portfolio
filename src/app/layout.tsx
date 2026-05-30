@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     description:
       "Practical AI techniques and tools for finance professionals.",
     type: "website",
-    url: "https://lightsteelblue-ant-761299.hostingersite.com",
+    url: "https://davidmerry.me",
   },
   twitter: {
     card: "summary",
