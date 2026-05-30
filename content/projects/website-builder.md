@@ -51,7 +51,7 @@ Encoded as a reusable Claude Code skill so any future build starts from a proven
 
 ## Proof of Concept
 
-This portfolio site (davemerry.com) was built end-to-end using the methodology, including:
+This portfolio site (davidmerry.me) was built end-to-end using the methodology, including:
 
 - Full CSS design system
 - WCAG AA contrast compliance across both dark and light modes

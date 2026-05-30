@@ -31,7 +31,7 @@ or `[david]` so `git log` stays a clear record of who did what.
 
 Project data (the case studies on `/projects` and the home page cards) is **NOT** hand-coded TypeScript. It is read at build time from markdown files in `content/projects/`, which are synced from the canonical source: `c:\Users\61422\LocalOnly\Projects\content-creation\1 - Projects\b - Project Summaries\`.
 
-**To add or update a case study on davemerry.com:**
+**To add or update a case study on davidmerry.me:**
 
 1. Edit/create the markdown file in `content-creation/1 - Projects/b - Project Summaries/`. Frontmatter must be on line 1 (no comments above it). Required fields: `slug, title, type, description, situation, problem, approach, whatIBuilt, stack`. Set `showOnSite: true` to publish.
 2. From this repo: `npm run sync-content`
@@ -56,4 +56,4 @@ Project data (the case studies on `/projects` and the home page cards) is **NOT*
 This project is one of four in David's career system. The command center lives at `C:\Users\61422\LocalOnly\Projects\career-hub\` — open that repo first and read its `dashboard.md` for cross-project state and the current Primary Action.
 
 - **Consumes from `content-creation`**: case studies via the markdown sync above. Never edit `content/projects/*.md` directly — they are overwritten on next sync. Source of truth = `content-creation/1 - Projects/b - Project Summaries/`.
-- **Feeds `job-search`**: davemerry.com is the proof link for CV, LinkedIn, recruiter conversations, and cold outreach.
+- **Feeds `job-search`**: davidmerry.me is the proof link for CV, LinkedIn, recruiter conversations, and cold outreach.

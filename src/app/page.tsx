@@ -1,8 +1,15 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import { getFeaturedProjects } from "@/data/projects.server";
 import { FadeSection } from "./_components/FadeSection";
 import { HeroSection } from "./_components/HeroSection";
 import { FeaturedCard } from "./_components/FeaturedCard";
+
+export const metadata: Metadata = {
+  title: "David Merry | Practical AI for Finance",
+  description:
+    "Practical AI techniques and tools for finance professionals. Workflows, case studies, and articles from a Director of Finance and Chartered Accountant.",
+};
 
 export default function Home() {
   const featured = getFeaturedProjects();
