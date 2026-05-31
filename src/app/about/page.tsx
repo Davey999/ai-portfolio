@@ -25,60 +25,50 @@ export default function AboutPage() {
         </h1>
       </MountFade>
 
-      {/* Two-column layout */}
-      <div className="flex flex-col lg:flex-row lg:gap-[10vw]">
-        {/* Left — Photo + Bio */}
-        <FadeSection className="lg:w-[35vw]" threshold={0.1}>
-          <div className="w-full aspect-[4/5] overflow-hidden rounded-sm mb-[5vh] relative">
-            <Image
-              src="/photo.jpg"
-              alt="David Merry"
-              fill
-              className="object-cover object-center"
-            />
-          </div>
+      {/* Photo at top */}
+      <FadeSection threshold={0.1}>
+        <div className="w-[50vw] lg:w-[28vw] aspect-[3/4] overflow-hidden rounded-sm mb-[8vh] relative">
+          <Image
+            src="/photo.jpg"
+            alt="David Merry"
+            fill
+            className="object-cover object-center"
+          />
+        </div>
+      </FadeSection>
 
+      {/* Bio */}
+      <FadeSection threshold={0.1}>
+        <div className="flex flex-col gap-4 text-[clamp(0.7rem,1vw,1.2rem)] tracking-[0.1rem] font-light leading-[clamp(1.1rem,3vh,1.4rem)] text-text-primary lg:max-w-[55vw]">
+          <p>I am a Director of Finance and Chartered Accountant with over 20 years experience across financial reporting and data analysis. For the past few years I have been using AI in that work every day - for traditional accounting tasks like reconciliations and automating month-end processes, and for more complex data analysis in Python and SQL that was not previously feasible. I also build with it: scripts and automations that now run reliably without any AI once they are done.</p>
+          <p>I only write about things I have tested against real work. If a technique did not change what I produced or how long it took, I did not publish it.</p>
+          <p>Templates and prompts circulate everywhere - a useful starting point. But they depend heavily on context, and the context almost always varies. You get good at AI by using AI; there is no substitute for the reps.</p>
+          <p>The part I find most interesting is building things with AI that then run without it - a script, a query, an automation. The output becomes deterministic and auditable even though the build process was not. Finance work is changing in ways I can see from where I sit; I write about what that looks like from inside a finance team.</p>
+        </div>
+      </FadeSection>
+
+      {/* Connect */}
+      <FadeSection className="mt-[8vh]" threshold={0.1}>
+        <div className="lg:max-w-[55vw]">
+          <div className="text-[clamp(1rem,1.5vw,2rem)] font-light mb-1 tracking-wide">
+            <h2>CONNECT</h2>
+          </div>
+          <div className="w-full h-[1px] bg-border mb-[3vh]" />
           <div className="flex flex-col gap-4 text-[clamp(0.7rem,1vw,1.2rem)] tracking-[0.1rem] font-light leading-[clamp(1.1rem,3vh,1.4rem)] text-text-primary">
-            <p>I am a Director of Finance and Chartered Accountant with over 20 years of experience across corporate finance, financial reporting, and data analysis. The kind of work where accuracy matters, deadlines don&apos;t move, and the spreadsheets have consequences.</p>
-            <p>A few years ago I started testing AI tools against real finance work - not demos, not hypotheticals, but the actual day-to-day. Month-end closes, reconciliations, data extraction, report writing. Turns out AI can handle a lot of it. But it takes the right tools, the right approach, and a lot of reps to find out what actually works.</p>
-            <p>Now I build workflows, document what delivers, and share it so other finance teams don&apos;t have to figure it out from scratch.</p>
+            <p>If you want to compare notes or just talk AI in finance, find me on LinkedIn.</p>
+            <a
+              href="https://www.linkedin.com/in/david-merry/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-text-primary hover:text-accent transition-colors duration-300"
+            >
+              LinkedIn
+            </a>
           </div>
-        </FadeSection>
+        </div>
+      </FadeSection>
 
-        {/* Right — Philosophy */}
-        <FadeSection className="lg:w-[35vw] mt-[10vh] lg:mt-0" threshold={0.1}>
-          <div>
-            <div className="text-[clamp(1rem,1.5vw,2rem)] font-light mb-1 tracking-wide">
-              <h2>APPROACH</h2>
-            </div>
-            <div className="w-full h-[1px] bg-border mb-[3vh]" />
-            <div className="flex flex-col gap-4 text-[clamp(0.7rem,1vw,1.2rem)] tracking-[0.1rem] font-light leading-[clamp(1.1rem,3vh,1.4rem)] text-text-primary">
-              <p>When AI doesn&apos;t deliver, the technology is rarely the problem. It&apos;s usually the tool, the setup, or the instructions. Getting good at it is a skill - and like most skills, it compounds with practice.</p>
-              <p>I don&apos;t write about what AI could theoretically do for finance teams. I write about what it actually does, tested against real work. If it doesn&apos;t save time or improve the output, it&apos;s not worth your attention.</p>
-              <p>A lot of what circulates online about AI in finance is templates - comment a word and someone sends you a prompt. Templates are a useful starting point. But results depend on context. You get good at AI by using AI, and there is no shortcut to that.</p>
-              <p>The way finance work gets done is changing. I write about what that looks like from the inside.</p>
-            </div>
-
-            <div className="mt-[5vh]">
-              <div className="text-[clamp(1rem,1.5vw,2rem)] font-light mb-1 tracking-wide">
-                <h2>CONNECT</h2>
-              </div>
-              <div className="w-full h-[1px] bg-border mb-[3vh]" />
-              <div className="flex flex-col gap-4 text-[clamp(0.7rem,1vw,1.2rem)] tracking-[0.1rem] font-light leading-[clamp(1.1rem,3vh,1.4rem)] text-text-primary">
-                <p>If you want to compare notes or just talk AI in finance, find me on LinkedIn.</p>
-                <a
-                  href="https://www.linkedin.com/in/david-merry/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-text-primary hover:text-accent transition-colors duration-300"
-                >
-                  LinkedIn
-                </a>
-              </div>
-            </div>
-          </div>
-        </FadeSection>
-      </div>
+      <div className="pb-[clamp(3rem,8vh,6rem)]" />
     </div>
   );
 }

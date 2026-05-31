@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { getFeaturedProjects } from "@/data/projects.server";
 import { FadeSection } from "./_components/FadeSection";
 import { HeroSection } from "./_components/HeroSection";
@@ -28,32 +27,29 @@ export default function Home() {
             Practical AI for Finance
           </div>
         </div>
-        {/* Photo */}
-        <div className="mt-[5vh] w-[35vw] aspect-[3/4] lg:mt-0 lg:ml-[15vw] lg:w-[14vw] lg:aspect-[3/4] overflow-hidden rounded-sm relative">
-          <Image src="/photo.jpg" alt="David Merry" fill className="object-cover object-center" />
-        </div>
+
       </HeroSection>
 
       {/* About Me + What's Here — two-column */}
-      <FadeSection className="relative w-screen pt-[clamp(5rem,15vh,10rem)] px-[10vw] lg:px-[15vw] flex flex-col lg:flex-row lg:items-start lg:gap-[10vw]">
-        <div className="flex flex-col items-start justify-start flex-1">
+      <FadeSection className="relative w-screen pt-[clamp(5rem,15vh,10rem)] px-[10vw] lg:px-[15vw] flex flex-col">
+        <div className="flex flex-col items-start justify-start">
           <div className="h-[8vh] flex items-end text-[clamp(1rem,1.5vw,2rem)] font-light mb-1 tracking-[0.1em]">
             <h2>ABOUT ME</h2>
           </div>
           <div className="w-full h-[1px] bg-border" />
           <div className="w-full flex flex-col pt-[clamp(1rem,5vh,2.5rem)] text-[clamp(0.7rem,1vw,1.2rem)] tracking-[0.1rem] font-light gap-4 leading-[clamp(1.1rem,3vh,1.4rem)] text-text-primary">
-            <p>Director of Finance and Chartered Accountant. I use AI every day - to do finance work better, and to build the tools that make that possible.</p>
+            <p>Director of Finance and Chartered Accountant. I have been using AI every day for a few years - for traditional accounting tasks like reconciliations and automating month-end processes, and for more complex data analysis in Python and SQL that was not previously feasible.</p>
           </div>
         </div>
-        <div className="flex flex-col items-start justify-start flex-1 mt-[8vh] lg:mt-0">
+        <div className="flex flex-col items-start justify-start mt-[8vh]">
           <div className="h-[8vh] flex items-end text-[clamp(1rem,1.5vw,2rem)] font-light mb-1 tracking-[0.1em]">
             <h2>WHAT&apos;S HERE</h2>
           </div>
           <div className="w-full h-[1px] bg-border" />
           <div className="w-full flex flex-col pt-[clamp(1rem,5vh,2.5rem)] text-[clamp(0.7rem,1vw,1.2rem)] tracking-[0.1rem] font-light gap-4 leading-[clamp(1.1rem,3vh,1.4rem)] text-text-primary">
-            <p>This site documents what I am learning about AI in finance - practical techniques, real workflows, and things I have built to solve actual problems.</p>
-            <p>You will also find projects I have built using Claude Code. I think that is where finance work is heading: AI integrated into your workflow, not just a chat window you copy and paste into.</p>
-            <p>If any of it is useful, or you just want to compare notes, find me on LinkedIn.</p>
+            <p>Articles about practical AI techniques I use in finance work - what I tested, what saved time, and what did not.</p>
+            <p>Projects built with Claude Code, including Python scripts and automations that run reliably once they are done. The interesting part is usually what it took to build them.</p>
+            <p>If any of it is useful, find me on LinkedIn.</p>
           </div>
         </div>
       </FadeSection>
