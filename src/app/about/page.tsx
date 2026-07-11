@@ -27,7 +27,7 @@ export default function AboutPage() {
 
       {/* Photo at top */}
       <FadeSection threshold={0.1}>
-        <div className="w-[50vw] lg:w-[28vw] aspect-[3/4] overflow-hidden rounded-sm mb-[8vh] relative">
+        <div className="w-[35vw] lg:w-[16vw] aspect-[3/4] overflow-hidden rounded-sm mb-[8vh] relative">
           <Image
             src="/photo.jpg"
             alt="David Merry"
