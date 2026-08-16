@@ -19,6 +19,19 @@ must be a committed file, not something said in chat.
 4. The receiving agent reads the open review file, addresses it, ticks the
    Status checkbox with the fixing commit SHA, and commits.
 
+**Codex build handoffs:** When Codex builds or changes project files, it writes
+and commits `reviews/codex-build-YYYY-MM-DD.md` with the changed files, base
+commit, verification, and remaining work. Claude Code must read the newest
+unactioned `codex-*` note before related work. Once actioned, update its Status
+checkbox in the resolving commit.
+
+**Claude session handover:** When David runs `/handover`, first read any
+unactioned committed `reviews/codex-*` notes alongside the local HANDOVER.md
+and Claude memory. Incorporate their completed work, decisions, verification,
+and open actions into HANDOVER.md. Do not copy a Codex summary verbatim or
+create a second source of truth; the review remains the committed audit trail
+and HANDOVER.md remains Claude's local session diary.
+
 **How to invoke Codex:** Run `/codex:review` from within Claude Code (Codex is
 a Claude Code marketplace plugin). Use `/codex:adversarial-review` to
 pressure-test decisions. Run `/codex:setup` first if Codex has not been used

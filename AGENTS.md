@@ -11,8 +11,11 @@ This version has breaking changes — APIs, conventions, and file structure may 
 Read these first, every session:
 
 1. **CLAUDE.md** — project rules and the multi-agent handoff protocol.
-2. **HANDOVER.md** — where the last session left off. Note: this file is gitignored
+2. **HANDOVER.md** — Claude Code's local session diary. Note: this file is gitignored
    and lives on local disk only. It will not be present in a remote/cloud context.
+3. **`reviews/`** — the newest unaddressed `codex-*` or `claude-*` handoff note.
+   This committed folder is the cross-agent record; read `reviews/README.md` when
+   there is no obvious open note.
 
 ## Your role here
 
@@ -25,8 +28,9 @@ the same handoff rules as reviews — commit the output and write a build summar
 
 ## The handoff loop (non-negotiable)
 
-The git repo is the shared brain. Chat history is not shared between agents,
-so anything that must survive must be a committed file.
+The git repo is the shared brain. Chat history and each tool's private memory
+are not shared. Anything that must survive an agent switch must be in a
+committed repository file.
 
 1. You only ever start from a **clean working tree**. If it is dirty, stop and
    say so rather than working on half-finished state.
@@ -38,9 +42,13 @@ so anything that must survive must be a committed file.
 3. For build tasks: commit both the built files AND the summary file together.
 4. **Commit before the agent switches.** Use the attribution convention below.
 
+**Receiving an agent's handoff:** Read the newest open note in `reviews/`
+before beginning related work. When you address it, update its Status line with
+the fixing commit SHA as part of your own commit.
+
 **Note on HANDOVER.md:** Do not update HANDOVER.md directly. That is Claude
-Code's job. Your `reviews/` summary gives Claude Code everything it needs to
-write the diary entry when David next runs `/handover`.
+Code's job. Your committed `reviews/` summary gives Claude Code the facts it
+needs to write the local diary entry when David next runs `/handover`.
 
 ## Commit attribution
 
