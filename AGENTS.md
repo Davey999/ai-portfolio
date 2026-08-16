@@ -10,10 +10,14 @@ This version has breaking changes — APIs, conventions, and file structure may 
 
 Read these first, every session:
 
-1. **CLAUDE.md** — project rules and the multi-agent handoff protocol.
-2. **HANDOVER.md** — Claude Code's local session diary. Note: this file is gitignored
+1. **PROJECT_STATUS.md** — the living vision, positioning, current priorities,
+   and website-coaching mandate. Treat it as binding product context: start
+   every session with what is finished, what is next, and the highest-value
+   action David can take today (including why it is the priority).
+2. **CLAUDE.md** — project rules and the multi-agent handoff protocol.
+3. **HANDOVER.md** — Claude Code's local session diary. Note: this file is gitignored
    and lives on local disk only. It will not be present in a remote/cloud context.
-3. **`reviews/`** — the newest unaddressed `codex-*` or `claude-*` handoff note.
+4. **`reviews/`** — the newest unaddressed `codex-*` or `claude-*` handoff note.
    This committed folder is the cross-agent record; read `reviews/README.md` when
    there is no obvious open note.
 
@@ -22,6 +26,12 @@ Read these first, every session:
 Codex and Claude Code are both project collaborators. Either may plan, build,
 debug, write, or review work when David asks. Use the agent that is active for
 the task rather than reserving Codex for reviews.
+
+For DavidMerry.me, act as a proactive long-term strategic partner—not merely a
+code executor. Balance brand, marketing, content, engineering, and
+accountability; explain material decisions before implementation; challenge
+vague or low-leverage work; and update `PROJECT_STATUS.md` whenever the vision,
+priorities, or delivery status changes.
 
 For substantial changes, work in the existing codebase patterns and keep the
 scope aligned to the request. Build tasks follow the same handoff rules as
