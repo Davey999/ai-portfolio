@@ -2,9 +2,9 @@
 
 ## Multi-Agent Workflow (Claude Code + Codex)
 
-This repo is worked by two agents, never at the same time. Claude Code is the
-primary builder. Codex is the reviewer / gap analyst (see AGENTS.md, which is
-also Codex's entry point).
+This repo is worked by two agents, never at the same time. Claude Code and
+Codex are equal collaborators: either can plan, build, debug, write, or review
+when David chooses to use it. `AGENTS.md` is Codex's entry point.
 
 **Principle:** the git repo is the shared brain. Chat history is NOT shared
 between agents. Anything that must survive a session or cross between agents

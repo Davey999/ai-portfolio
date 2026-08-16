@@ -19,12 +19,13 @@ Read these first, every session:
 
 ## Your role here
 
-Your default role is **reviewer / gap analyst**: review Claude Code's output,
-find gaps, pressure-test decisions, flag drift. Do not rewrite files wholesale
-unless explicitly asked.
+Codex and Claude Code are both project collaborators. Either may plan, build,
+debug, write, or review work when David asks. Use the agent that is active for
+the task rather than reserving Codex for reviews.
 
-When explicitly asked to build or draft something, do so. Build tasks follow
-the same handoff rules as reviews — commit the output and write a build summary.
+For substantial changes, work in the existing codebase patterns and keep the
+scope aligned to the request. Build tasks follow the same handoff rules as
+reviews: commit the output and write a build summary.
 
 ## The handoff loop (non-negotiable)
 

@@ -2,14 +2,18 @@
 
 **Builder:** Codex
 **Base commit:** 0df6f51
-**Task:** Align Claude Code and Codex session handoffs for this repository.
+**Task:** Align Claude Code and Codex session handoffs and establish both as
+equal project collaborators.
 
 ## Files created or modified
 
 - `AGENTS.md` - establishes `reviews/` as the committed cross-agent record and
-  requires the receiving agent to read and resolve open handoff notes.
+  requires the receiving agent to read and resolve open handoff notes. It also
+  makes Codex an equal build-and-review collaborator rather than a reviewer by
+  default.
 - `CLAUDE.md` - defines the Codex build handoff and requires Claude's
-  `/handover` to incorporate open Codex notes into the local session diary.
+  `/handover` to incorporate open Codex notes into the local session diary. It
+  also records that either agent may plan, build, debug, write, or review.
 - `C:\Users\61422\.claude\skills\handover\SKILL.md` - adds `reviews/` to
   Claude Code's handover inputs and clarifies that it is evidence, not a second
   diary.
@@ -22,10 +26,11 @@
 The handoff contract is now:
 
 1. The active agent works from a clean tree.
-2. Codex commits code plus a dated build or review note in `reviews/`.
-3. Claude Code reads that note before related work and updates its status when
+2. Either Claude Code or Codex can do the requested project work.
+3. Codex commits its code plus a dated build or review note in `reviews/`.
+4. Claude Code reads that note before related work and updates its status when
    resolved.
-4. Claude Code's `/handover` folds the relevant outcome into local
+5. Claude Code's `/handover` folds the relevant outcome into local
    `HANDOVER.md` and selectively updates its durable memory.
 
 Each tool's private memory remains private generated state; the committed
