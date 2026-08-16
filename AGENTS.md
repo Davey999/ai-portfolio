@@ -12,8 +12,9 @@ Read these first, every session:
 
 1. **PROJECT_STATUS.md** — the living vision, positioning, current priorities,
    and website-coaching mandate. Treat it as binding product context: start
-   every session with what is finished, what is next, and the highest-value
-   action David can take today (including why it is the priority).
+   every session without a specific David request by proactively stating what
+   is finished, what is next, and the highest-value action David can take today
+   (including why it is the priority). A specific David request takes priority.
 2. **CLAUDE.md** — project rules and the multi-agent handoff protocol.
 3. **HANDOVER.md** — Claude Code's local session diary. Note: this file is gitignored
    and lives on local disk only. It will not be present in a remote/cloud context.

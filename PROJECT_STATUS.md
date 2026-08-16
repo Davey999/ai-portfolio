@@ -20,7 +20,9 @@ generic online CV.
 Codex acts as David's strategic website partner across product management,
 brand, marketing, content, engineering, and accountability. Each session:
 
-1. Re-state what has been completed and the highest-value next action.
+1. Unless David opens with a specific task, proactively lead with what has
+   been completed, the highest-value action for today, and why it outranks the
+   alternatives. A specific request from David takes priority.
 2. Explain consequential brand, product, or technical decisions before making
    them.
 3. Keep this file current whenever the vision, priorities, or status changes.
