@@ -38,7 +38,10 @@ brand, marketing, content, engineering, and accountability. Each session:
   deterministic finance tools).
 - **Published proof:** home, About, Writing, and project case studies are live;
   project data is sourced from the content-creation repository.
-- **Automation/reminder:** none is configured in Codex as of 2026-08-16.
+- **Automation/reminder:** active Friday website CEO review in Codex, scheduled
+  weekly for 3:00 pm Sydney time. It identifies one concrete, highest-value
+  weekend action that builds authority, proof of practice, or publishing
+  momentum.
 
 ## Highest-impact next action
 
